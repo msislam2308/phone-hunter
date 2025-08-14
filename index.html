@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phone Hunter</title>
+</head>
+
+<body class="text-center items-center justify-center m-10">
+    <h1 class="font-bold text-6xl text-orange-500 ">Hunting Phones</h1>
+    <main class="container mx-auto mt-10">
+        <section class="bg-gray-100 p-4 flex gap-5 rounded-xl">
+            <input id="search-field" type="text" placeholder="Search..." class="input" />
+            <button onclick="handleSearch()" class="btn btn-accent">Search</button>
+        </section>
+        <section class="">
+            <div id="loading-spinner" class="my-20 hidden">
+                <span class="loading loading-spinner text-error"></span>
+            </div>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 space-y-10">
+            </div>
+            <div id="show-all-container" class="hidden text-right mt-5">
+                <button onclick="handleShowAll()" class="btn btn-primary">Show All</button>
+            </div>
+            <div id="show-less-container" class="hidden text-right mt-5">
+                <button onclick="handleShowLess()" class="btn btn-primary">Show Less</button>
+            </div>
+        </section>
+
+        <!-- <button class="btn" onclick="show_details.showModal()">See Details</button> -->
+        <dialog id="show_details" class="modal space-y-2">
+            <div class="modal-box w-11/12 max-w-5xl">
+                <div id="show-details-container" class="">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+    </main>
+    <!-- <button onclick="loadPhone()" class="btn bg-green-600 mt-5">See Phones</button> -->
+    <script src="phone.js"></script>
+</body>
+
+</html>
